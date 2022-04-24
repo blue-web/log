@@ -1,0 +1,35 @@
+{
+    "name": "bluewebmv/log",
+    "type": "library",
+    "description": "Symfony custom log. Create a log",
+    "keywords": [
+        "log",
+        "symfony"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mattia Vitali",
+            "email": "vitali.mattia@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BlueWeb\\Log\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.3",
+        "doctrine/doctrine-bundle": "^2.0",
+        "doctrine/orm": "^2.7",
+        "escsrl/repository": "^1.0",
+        "escsrl/user": "^4.0",
+        "nesbot/carbon": "^2.7",
+        "psr/log": "^1.1",
+        "symfony/http-foundation": "^6.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "version": "0.0.1"
+}
