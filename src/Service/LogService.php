@@ -31,20 +31,19 @@ class LogService
      * @param string $section
      * @param string $action
      * @param string $description
+     * @param AttributeBag $attributeBag
      */
-    public function createLog(string $username, ?string $nominative, string $section, string $action, string $description): void
+    public function createLog(string $username, ?string $nominative, string $section, string $action, string $description, AttributeBag $attributeBag): void
     {
-
-        /** @var User $user */
-        $user = $this->security->getUser();
 
         $log = new Log();
 
-        $log->setUsername($user->getUsername());
+        $log->setUsername($username);
         $log->setNominative($nominative);
         $log->setSection($section);
         $log->setAction($action);
         $log->setDescription($description);
+        $log->setData($attributeBag->all());
 
         $this->entityManagerInterface->persist($log);
         $this->entityManagerInterface->flush();

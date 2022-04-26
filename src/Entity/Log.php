@@ -17,6 +17,7 @@ class Log
     public const LOG_ACTION_CREATED = 'ha creato';
     public const LOG_ACTION_EDIT = 'ha modificato';
     public const LOG_ACTION_REMOVE = 'ha eliminato';
+    public const LOG_ACTION_IMPORT = 'ha importato';
 
     /**
      * @ORM\Id

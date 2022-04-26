@@ -1,7 +1,7 @@
 {
     "name": "bluewebmv/log",
     "type": "library",
-    "description": "Symfony custom log. Create a log",
+    "description": "Symfony custom create log in table.",
     "keywords": [
         "log",
         "symfony"
@@ -31,5 +31,5 @@
     "config": {
         "sort-packages": true
     },
-    "version": "0.0.5"
+    "version": "0.0.6"
 }
