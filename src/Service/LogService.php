@@ -3,9 +3,9 @@
 
 namespace BlueWeb\Log\Service;
 
-use BlueWeb\Entity\Log;
-use BlueWeb\Entity\User;
+use BlueWeb\Log\Entity\Log;
 use Doctrine\ORM\EntityManagerInterface;
+use Esc\User\Entity\User;
 use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
 use Symfony\Component\Security\Core\Security;
 
@@ -35,6 +35,7 @@ class LogService
     public function createLog(string $username, ?string $nominative, string $section, string $action, string $description): void
     {
 
+        /** @var User $user */
         $user = $this->security->getUser();
 
         $log = new Log();
