@@ -2,7 +2,7 @@
 
 namespace BlueWeb\Log\Repository;
 
-use App\Entity\Log;
+use BlueWeb\Entity\Log;
 use Doctrine\Persistence\ManagerRegistry;
 use Esc\Repository\Repository;
 

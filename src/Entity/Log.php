@@ -2,7 +2,7 @@
 
 namespace BlueWeb\Log\Entity;
 
-use App\Repository\LogRepository;
+use BlueWeb\Repository\LogRepository;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;

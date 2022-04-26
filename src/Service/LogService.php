@@ -3,29 +3,24 @@
 
 namespace BlueWeb\Log\Service;
 
-use App\Entity\Log;
-use App\Entity\User;
+use BlueWeb\Entity\Log;
+use BlueWeb\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
 use Symfony\Component\Security\Core\Security;
-use Symfony\Component\Serializer\Exception\ExceptionInterface;
-use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class LogService
 {
     private $entityManagerInterface;
     private $security;
-    private $normalizer;
 
     public function __construct(
         EntityManagerInterface $manager,
-        Security               $security,
-        NormalizerInterface    $normalizer
+        Security               $security
     )
     {
         $this->entityManagerInterface = $manager;
         $this->security = $security;
-        $this->normalizer = $normalizer;
     }
 
     /**
