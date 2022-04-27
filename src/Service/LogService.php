@@ -13,6 +13,7 @@ class LogService
 {
     private $entityManagerInterface;
     private $security;
+    private $codeGroup = null;
 
     public function __construct(
         EntityManagerInterface $manager,
@@ -21,6 +22,15 @@ class LogService
     {
         $this->entityManagerInterface = $manager;
         $this->security = $security;
+    }
+
+    /**
+     * Genera un code Group
+     * @return void
+     */
+    public function initializeCodeGroup(): void
+    {
+        $this->codeGroup = uniqid(null,false);
     }
 
     /**
@@ -46,6 +56,7 @@ class LogService
         $log->setAction($action);
         $log->setDescription($description);
         $log->setData($attributeBag->all());
+        $log->setCodeGroup($this->codeGroup);
 
         $this->entityManagerInterface->persist($log);
         $this->entityManagerInterface->flush();
@@ -76,6 +87,7 @@ class LogService
         $log->setAction($action);
         $log->setDescription($description);
         $log->setData($attributeBag->all());
+        $log->setCodeGroup($this->codeGroup);
 
         $this->entityManagerInterface->persist($log);
         $this->entityManagerInterface->flush();

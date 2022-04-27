@@ -67,6 +67,10 @@ class Log
      */
     private $created;
 
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $codeGroup;
 
     public function getId(): ?int
     {
@@ -174,6 +178,18 @@ class Log
     public function setActivityName(?string $activityName): self
     {
         $this->activityName = $activityName;
+
+        return $this;
+    }
+
+    public function getCodeGroup(): ?string
+    {
+        return $this->codeGroup;
+    }
+
+    public function setCodeGroup(?string $codeGroup): self
+    {
+        $this->codeGroup = $codeGroup;
 
         return $this;
     }
