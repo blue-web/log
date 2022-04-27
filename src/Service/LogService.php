@@ -28,18 +28,20 @@ class LogService
      *
      * @param string $username
      * @param string|null $nominative
+     * @param string $activityName
      * @param string $section
      * @param string $action
      * @param string $description
      * @param AttributeBag $attributeBag
      */
-    public function createLog(string $username, ?string $nominative, string $section, string $action, string $description, AttributeBag $attributeBag): void
+    public function createLog(string $username, ?string $nominative, string $activityName, string $section, string $action, string $description, AttributeBag $attributeBag): void
     {
 
         $log = new Log();
 
         $log->setUsername($username);
         $log->setNominative($nominative);
+        $log->setActivityName($activityName);
         $log->setSection($section);
         $log->setAction($action);
         $log->setDescription($description);
