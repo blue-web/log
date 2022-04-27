@@ -14,10 +14,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Log
 {
 
-    public const LOG_ACTION_CREATED = 'ha creato';
-    public const LOG_ACTION_EDIT = 'ha modificato';
-    public const LOG_ACTION_REMOVE = 'ha eliminato';
-    public const LOG_ACTION_IMPORT = 'ha importato';
+    public const LOG_ACTION_CREATED = 'INSERT';
+    public const LOG_ACTION_UPDATE = 'UPDATE';
+    public const LOG_ACTION_REMOVE = 'DELETE';
+    public const LOG_ACTION_IMPORT = 'IMPORT';
+    public const LOG_ACTION_GET = 'GET';
 
     /**
      * @ORM\Id
@@ -52,7 +53,7 @@ class Log
     private $action;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
@@ -94,7 +95,7 @@ class Log
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
