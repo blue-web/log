@@ -19,6 +19,9 @@ class Log
     public const LOG_ACTION_REMOVE = 'DELETE';
     public const LOG_ACTION_IMPORT = 'IMPORT';
     public const LOG_ACTION_GET = 'GET';
+    public const LOG_ACTION_INFO = 'INFO';
+    public const LOG_ACTION_ERROR = 'ERROR';
+    public const LOG_ACTION_SUCCESS = 'SUCCESS';
 
     /**
      * @ORM\Id
