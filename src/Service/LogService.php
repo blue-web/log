@@ -88,6 +88,20 @@ class LogService
         $this->activityName = $activityName;
     }
 
+
+    /**
+     * Set auto user
+     * @return void
+     */
+    public function setAutoUsernameAndNominative(): void
+    {
+        /** @var User $user */
+        $user = $this->security->getUser();
+
+        $this->username = $user->getUsername();
+        $this->nominative = $user->getName() . ' '. $user->getSurname();
+    }
+
     /**
      * Creo una riga di log
      *
