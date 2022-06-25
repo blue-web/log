@@ -22,6 +22,7 @@ class Log
     public const LOG_ACTION_INFO = 'INFO';
     public const LOG_ACTION_ERROR = 'ERROR';
     public const LOG_ACTION_SUCCESS = 'SUCCESS';
+    public const LOG_ACTION_UPLOAD = 'UPLOAD';
 
     /**
      * @ORM\Id

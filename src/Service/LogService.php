@@ -95,11 +95,16 @@ class LogService
      */
     public function setAutoUsernameAndNominative(): void
     {
-        /** @var User $user */
-        $user = $this->security->getUser();
+        if($this->security->getUser()) {
+            /** @var User $user */
+            $user = $this->security->getUser();
 
-        $this->username = $user->getUsername();
-        $this->nominative = $user->getName() . ' '. $user->getSurname();
+            $this->username = $user->getUsername();
+            $this->nominative = $user->getName() . ' ' . $user->getSurname();
+        }else{
+            $this->username = 'NOT LOGGED';
+            $this->nominative = '';
+        }
     }
 
     /**
